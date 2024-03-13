@@ -4,14 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.iclass.controller.api.ApiCheckIdController;
+import org.iclass.controller.api.ApiGetBookOneController;
 import org.iclass.controller.api.ApiMemberJoinController;
 import org.iclass.controller.api.ApiMemberModifyController;
+import org.iclass.controller.api.ApiNewBookImageUploadController;
 import org.iclass.controller.api.ApiPaymentSaveController;
 import org.iclass.controller.book.BookCaseFormController;
 import org.iclass.controller.book.BookCaseListController;
 import org.iclass.controller.book.BookCasePayRequestFailController;
 import org.iclass.controller.book.BookCasePayRequestSuccessController;
 import org.iclass.controller.book.BookCaseSaveController;
+import org.iclass.controller.book.NewBookListController;
+import org.iclass.controller.book.NewBookSaveController;
+import org.iclass.controller.book.NewFormController;
 import org.iclass.controller.community.CommentsController;
 import org.iclass.controller.community.DeleteController;
 import org.iclass.controller.community.ListController;
@@ -60,10 +65,10 @@ public class RequestControllerMapping {
 		mapping.put(new RequestKeyValue("/logout", "GET"), new LogoutController());
 
 		//새로나온책 (파일업로드)
-//		mapping.put(new RequestKeyValue("/book/new", "GET"), new NewFormController());
-//		mapping.put(new RequestKeyValue("/book/new", "POST"), new NewBookSaveController());
-//		mapping.put(new RequestKeyValue("/book/upload", "POST"), new ApiNewBookImageUploadController());
-//		mapping.put(new RequestKeyValue("/book/list", "GET"), new NewBookListController());
+		mapping.put(new RequestKeyValue("/book/new", "GET"), new NewFormController());
+		mapping.put(new RequestKeyValue("/book/new", "POST"), new NewBookSaveController());
+		mapping.put(new RequestKeyValue("/book/upload", "POST"), new ApiNewBookImageUploadController());
+		mapping.put(new RequestKeyValue("/book/list", "GET"), new NewBookListController());
 
 		//책장
 		mapping.put(new RequestKeyValue("/book/bookcase","GET"), new BookCaseListController());
@@ -86,7 +91,7 @@ public class RequestControllerMapping {
 		// api mapping
 		mapping.put(new RequestKeyValue("/api/auth/checkId", "POST"), new ApiCheckIdController() );
 		mapping.put(new RequestKeyValue("/api/auth/join", "POST"), new ApiMemberJoinController() );
-//		mapping.put(new RequestKeyValue("/api/book", "GET"), new ApiGetBookOneController() );
+		mapping.put(new RequestKeyValue("/api/book", "GET"), new ApiGetBookOneController() );
 		mapping.put(new RequestKeyValue("/api/pay", "POST"), new ApiPaymentSaveController() );
 
 	}
