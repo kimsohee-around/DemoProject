@@ -3,7 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="notice">
- 	
+ 	<!-- 글쓰기 -->
+ 	<insert id="insert" parameterType="org.iclass.vo.Notice">
+ 		INSERT INTO notice 
+ 		VALUES (notice_idx_seq.nextval,
+		 		#{title},
+		 		#{content},
+		 		0,
+		 		sysdate,
+		 		#{attachFile,jdbcType=VARCHAR},
+		 		#{uploadFile,jdbcType=VARCHAR})
+ 	</insert>
  </mapper>
  
  
