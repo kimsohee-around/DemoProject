@@ -44,7 +44,13 @@
 		 		#{attachFile,jdbcType=VARCHAR},
 		 		#{uploadFile,jdbcType=VARCHAR})
  	</insert>
-
+ 	
+ 	<!-- 글 읽기 -->
+	<select id="getOne" parameterType="int" resultType="org.iclass.vo.Notice">
+ 		SELECT * 
+		FROM notice
+		WHERE idx = #{idx} 
+ 	</select>
  </mapper>
  
  

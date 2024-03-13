@@ -43,4 +43,12 @@ public class NoticeDao {
 		mapperSession.close();
 		return result;
 	}
+
+//  글읽기
+	public Notice read(int idx) {
+		SqlSession mapperSession = SqlSessionBean.getSession();
+		Notice vo = mapperSession.selectOne("notice.getOne",idx);
+		mapperSession.close();
+		return vo;
+	}
 }
