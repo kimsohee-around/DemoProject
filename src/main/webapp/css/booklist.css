@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@font-face {
+		    font-family: 'SUIT-Regular';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+* {
+	box-sizing: border-box;
+}		
+
+section {
+	padding : 3em 0;
+}	
+	
+h1 a , div.container,h3 ,th {
+			font-family: 'SUIT-Regular';
+}
+#booklist > div#mainarea  {
+	width:90rem; 
+	margin: auto;
+	overflow:hidden;
+	border:1px solid #ccc;
+	padding: 1.5rem;
+}
+#booklist h3,#booklist p {
+	text-align: center;
+	margin-bottom: 0
+}
+
+#booklist i {
+	color : #0080c0;
+}
+div.gallery {
+	float: left;
+	margin: 0.8rem;
+	width: 20rem;
+	height: 32rem;
+	overflow: hidden;
+}
+
+.gallery > div{
+	padding : 1rem;
+}
+
+.gallery img:hover {
+	/*  	object-fit: cover;  */
+	padding: 2px;
+	cursor: pointer;
+}
+
+.gallery img{
+	width : 100%;
+	height : 100%;
+	object-fit:cover;
+}
+
+.bookcase img:hover {
+	padding: 0;
+	cursor: auto;
+}
+.bookcase {
+	padding-bottom: 1.5em;
+}
+.bookcase div {
+	margin-bottom: 0;
+} 
+.bookcase .intro {
+	font-size:0.9em;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.bookcase a{
+	cursor : pointer;
+}
+
+.modal-body div.pay {
+	float: left;
+	margin: 0.8rem;
+	overflow: hidden;
+}
+.modal-body div.pay:first-child {
+	width: 13em;
+}
+
+.modal-body div.pay:last-child {
+	width: 30em;
+}
+
+.modal-body .inline {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+a.button {
+    background-color: #661b07;
+    color:white;
+    padding: 4px 8px;
+    text-decoration: none;  /*  밑줄제거  */
+    cursor: pointer;
+    display: inline-block;
+	text-align:center;
+	border-radius: 4px;
+	border:none;
+	margin : 3px;
+	font-size: 0.9em;
+}
+
+
+.paygroup button {
+  	background-color:transparent !important;
+  	background-image: none !important; 
+   	color:black;
+   	/* padding: 4px 8px; */
+    cursor: pointer;
+    display: inline-block;
+	text-align:center;
+	border-radius: 4px;
+	border:1px solid gray;
+	margin : 3px;
+	font-size: 0.9em;
+	padding : 3px;
+	width : 10em;
+}
+
+.paygroup a{
+	display:inline-block;
+	width:9em;
+	height:2.5em;
+	border-radius: 4px;
+	padding :2px;
+	margin : 2px;
+	cursor: pointer;
+	text-decoration: none !important; 
+}
+
+.paygroup button:hover {
+	color : blue !important;
+}
+
+.paygroup img{
+	display:block;
+	margin:0; padding:0;
+	width: 70%;
+	height: 50%;
+	object-fit:cover;	
+	margin : auto;
+/* 	border:1px solid gray; */
+}
+
+/* 결제 성공 : success.jsp */
+div.info p{
+	margin-bottom: 0.5em !important;
+}
+div.info span.title{
+	font-size: 1.1em !important;
+	font-weight: 600 !important;
+} 
+
+div.paybtn button.ok {
+	background-color : #071d3d;
+	color:white;
+}
+div.paybtn button.cancel {
+	background-color: #c7a079;
+		color:white;
+}
+.modal .modal-content{
+	width : 50em;
+	padding : 2em;
+}
+.modal .modal-title{
+	color : #ccc;
+	font-size: 0.9em;
+}
+.modal p {
+	margin : 0;
+	padding : 0;
+}
+.modal-body > p#summary {
+	font-size: 0.75em;
+}
