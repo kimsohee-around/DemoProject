@@ -44,6 +44,7 @@ https://mybatis.org/mybatis-3/ko/getting-started.html 참고
     <mapper resource="mybatis/demomember.xml"/>
     <mapper resource="mybatis/bookcase.xml"/>
     <mapper resource="mybatis/books.xml"/>
+    <mapper resource="mybatis/notice.xml"/>
     <!-- 
     resource 속성일 때 파일의 패키지명은 . 아니고 / 기호 사용합니다.
     sql mapper 파일은 여러개 사용될 수 있습니다. -->
