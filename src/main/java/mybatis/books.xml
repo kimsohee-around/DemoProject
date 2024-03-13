@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="books">
+	 
+ 	<select id="listAll" resultType="org.iclass.vo.NewBooks">
+ 		SELECT *
+ 		FROM
+ 			newbooks
+ 	</select>
+ 	<select id="getOne" parameterType="int" resultType="org.iclass.vo.NewBooks">
+ 		SELECT *
+ 		FROM
+ 			newbooks
+ 		WHERE idx = #{idx}
+ 	</select>
+ 	<insert id="insert" parameterType="org.iclass.vo.NewBooks">
+ 		INSERT INTO newbooks (idx,title,summary,regdate,coverfile,userid)
+ 		VALUES (newbooks_idx_seq.nextval,
+		 		#{title},
+		 		#{summary,jdbcType=CLOB},
+		 		sysdate,
+		 		#{coverfile},
+		 		#{userid})
+ 	</insert>
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
