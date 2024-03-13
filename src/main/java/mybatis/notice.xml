@@ -3,6 +3,36 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="notice">
+
+ 	<!-- 페이지 목록에 필요한 SQL -->
+ 	<select id="getList" resultType="org.iclass.vo.Notice" 
+ 			parameterType="org.iclass.vo.Paging" >
+ 		SELECT * FROM 
+			(SELECT rownum r ,f.* from
+				(SELECT * 
+				 FROM notice  
+				<if test="column != null and column != 'createdAt'">
+				 WHERE ${column} LIKE '%' || #{findText} || '%'
+				 </if>
+				  <if test="column != null and column == 'createdAt'">
+				 WHERE TO_CHAR(createdAt,'YYYY-MM-DD') = #{findText}
+				 </if>
+				 ORDER BY idx DESC) f
+		 	)
+		WHERE r BETWEEN #{startNo} AND #{endNo}	
+ 	</select>
+ 	<select id="count" resultType="int" 
+ 			parameterType="java.util.Map" >
+ 		SELECT count(*) 
+		FROM notice  
+		 <if test="column != null and column != 'createdAt'">
+		 WHERE ${column} LIKE '%' || #{findText} || '%'
+		 </if>
+		  <if test="column != null and column == 'createdAt'">
+		 WHERE TO_CHAR(createdAt,'YYYY-MM-DD') = #{findText}
+		 </if>
+ 	</select>
+
  	<!-- 글쓰기 -->
  	<insert id="insert" parameterType="org.iclass.vo.Notice">
  		INSERT INTO notice 
@@ -14,10 +44,8 @@
 		 		#{attachFile,jdbcType=VARCHAR},
 		 		#{uploadFile,jdbcType=VARCHAR})
  	</insert>
+
  </mapper>
- 
- 
- 
  
  
  
