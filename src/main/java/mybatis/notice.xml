@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="notice">
+
  	<!-- 페이지 목록에 필요한 SQL -->
  	<select id="getList" resultType="org.iclass.vo.Notice" 
  			parameterType="org.iclass.vo.Paging" >
@@ -31,10 +32,20 @@
 		 WHERE TO_CHAR(createdAt,'YYYY-MM-DD') = #{findText}
 		 </if>
  	</select>
+
+ 	<!-- 글쓰기 -->
+ 	<insert id="insert" parameterType="org.iclass.vo.Notice">
+ 		INSERT INTO notice 
+ 		VALUES (notice_idx_seq.nextval,
+		 		#{title},
+		 		#{content},
+		 		0,
+		 		sysdate,
+		 		#{attachFile,jdbcType=VARCHAR},
+		 		#{uploadFile,jdbcType=VARCHAR})
+ 	</insert>
+
  </mapper>
- 
- 
- 
  
  
  
