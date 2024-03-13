@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@font-face {
+		    font-family: 'SUIT-Regular';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+#book h1 a , #book div.container,#book h3 ,#book th {
+			font-family: 'SUIT-Regular';
+		}
+#book th {
+	font-weight:200;
+}
+#book h3 ,#book .sub {
+	margin : 20px;
+	text-align: center;
+}
+#book th {
+	width : 15%;
+}
+#book table {
+	width : 70rem;
+	margin: auto;
+	
+}
+#book th {
+		text-align: center;
+		background-color: #b9e4c9;
+		color: #ff8080;
+		border-radius : 3px;
+		margin:7px;
+		padding: 7px;
+}
+
+#book input,#book textarea {
+	padding: 10px;
+	border: 1px solid #4080bf;
+	border-radius: 3px;
+}
+
+button.book-btn {
+	background-color:white;
+    color:#356859;
+    padding: 7px;
+    cursor: pointer;
+	border-radius: 4px;
+	border:1px solid #356859;
+	margin : 3px;
+	font-size: 0.8em;
+}
+button.book-btn:hover {
+	border:2px solid #356859;
+	padding: 6px 24px;
+	font-weight: bold;
+}
+#book table #editor{
+	min-height: 40rem;
+}
+
+/* 변경 */
+#book .ql-toolbar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    padding: 3px 5px;
+    width: 28px;
+    min-width: 28px;
+}
+
