@@ -40,7 +40,7 @@ public class NoticeWriteSaveController implements Controller {
 		//서버로 업로드된 파일의 파일명
 		String filename = multiRequest.getFilesystemName("attachfile");
 		logger.info("::: 파일명-{} from {}  :::",filename,attachfile);   //uploadFile
-		//서버의 파일 시스템 C:\\upload 경로에서 파일이 생겼는지 확인하기
+		//서버의 파일 시스템 D:\\Class231228\\upload 경로에서 파일이 생겼는지 확인하기
 		
 		
 		String title=multiRequest.getParameter("title");
