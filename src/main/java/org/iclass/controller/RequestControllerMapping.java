@@ -33,9 +33,12 @@ import org.iclass.controller.member.MemberDropController;
 import org.iclass.controller.member.MemberJoinController;
 import org.iclass.controller.member.MemberModifyController;
 import org.iclass.controller.member.MemberSaveController;
+import org.iclass.controller.notice.NoticeDeleteController;
 import org.iclass.controller.notice.NoticeFileDownloadController;
 import org.iclass.controller.notice.NoticeListController;
 import org.iclass.controller.notice.NoticeReadController;
+import org.iclass.controller.notice.NoticeUpdateController;
+import org.iclass.controller.notice.NoticeUpdateSaveController;
 import org.iclass.controller.notice.NoticeWriteController;
 import org.iclass.controller.notice.NoticeWriteSaveController;
 
@@ -89,9 +92,9 @@ public class RequestControllerMapping {
 		mapping.put(new RequestKeyValue("/notice/read", "GET"), new NoticeReadController());
 		mapping.put(new RequestKeyValue("/notice/write", "GET"), new NoticeWriteController());
 		mapping.put(new RequestKeyValue("/notice/save", "POST"),new NoticeWriteSaveController());
-//		mapping.put(new RequestKeyValue("/notice/update", "GET"), new NoticeUpdateController());
-//		mapping.put(new RequestKeyValue("/notice/update", "POST"), new NoticeUpdateSaveController());
-//		mapping.put(new RequestKeyValue("/notice/delete", "GET"), new NoticeDeleteController());
+		mapping.put(new RequestKeyValue("/notice/update", "GET"), new NoticeUpdateController());
+		mapping.put(new RequestKeyValue("/notice/update", "POST"), new NoticeUpdateSaveController());
+		mapping.put(new RequestKeyValue("/notice/delete", "GET"), new NoticeDeleteController());
 		mapping.put(new RequestKeyValue("/notice/download", "POST"), new NoticeFileDownloadController());
 
 		// api mapping
