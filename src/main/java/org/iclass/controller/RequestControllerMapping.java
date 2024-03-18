@@ -33,7 +33,9 @@ import org.iclass.controller.member.MemberDropController;
 import org.iclass.controller.member.MemberJoinController;
 import org.iclass.controller.member.MemberModifyController;
 import org.iclass.controller.member.MemberSaveController;
+import org.iclass.controller.notice.NoticeFileDownloadController;
 import org.iclass.controller.notice.NoticeListController;
+import org.iclass.controller.notice.NoticeReadController;
 import org.iclass.controller.notice.NoticeWriteController;
 import org.iclass.controller.notice.NoticeWriteSaveController;
 
@@ -84,13 +86,13 @@ public class RequestControllerMapping {
 		
 		//공지사항(검색기능)
 		mapping.put(new RequestKeyValue("/notice/list", "GET"), new NoticeListController());
-//		mapping.put(new RequestKeyValue("/notice/read", "GET"), new NoticeReadController());
+		mapping.put(new RequestKeyValue("/notice/read", "GET"), new NoticeReadController());
 		mapping.put(new RequestKeyValue("/notice/write", "GET"), new NoticeWriteController());
 		mapping.put(new RequestKeyValue("/notice/save", "POST"),new NoticeWriteSaveController());
 //		mapping.put(new RequestKeyValue("/notice/update", "GET"), new NoticeUpdateController());
 //		mapping.put(new RequestKeyValue("/notice/update", "POST"), new NoticeUpdateSaveController());
 //		mapping.put(new RequestKeyValue("/notice/delete", "GET"), new NoticeDeleteController());
-//		mapping.put(new RequestKeyValue("/notice/download", "POST"), new NoticeFileDownloadController());
+		mapping.put(new RequestKeyValue("/notice/download", "POST"), new NoticeFileDownloadController());
 
 		// api mapping
 		mapping.put(new RequestKeyValue("/api/auth/checkId", "POST"), new ApiCheckIdController() );
