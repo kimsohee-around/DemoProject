@@ -59,4 +59,20 @@ public class NoticeDao {
 		return result;
 		
 	}
+	
+	public int update(Notice notice) {
+		SqlSession mapperSession = SqlSessionBean.getSession();
+		int result = mapperSession.update("notice.update",notice);
+		mapperSession.commit();
+		mapperSession.close();
+		return result;
+	}
+	
+	public int delete(int idx) {
+		SqlSession mapperSession = SqlSessionBean.getSession();
+		int result = mapperSession.update("notice.delete",idx);
+		mapperSession.commit();
+		mapperSession.close();
+		return result;
+	}
 }

@@ -59,6 +59,18 @@
 		WHERE 
 			idx = #{idx}
 	</update>		
+	
+	<update id="update" parameterType="org.iclass.vo.Notice">
+ 		UPDATE notice
+ 		SET title=#{title},
+ 			content=#{content},
+ 			attachFile=#{attachFile,jdbcType=VARCHAR},
+ 			uploadFile=#{uploadFile,jdbcType=VARCHAR}
+		WHERE idx = #{idx}
+ 	</update>
+ 	<delete id="delete" parameterType="int">
+ 		DELETE FROM notice WHERE idx=#{idx}
+ 	</delete>
  </mapper>
  
  
