@@ -51,6 +51,14 @@
 		FROM notice
 		WHERE idx = #{idx} 
  	</select>
+ 	<!-- 조회수 증가 -->
+ 	<update id="setReadCount" parameterType="int">
+ 		UPDATE notice 
+		SET 
+			READCOUNT = READCOUNT +1 
+		WHERE 
+			idx = #{idx}
+	</update>		
  </mapper>
  
  

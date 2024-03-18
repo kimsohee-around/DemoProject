@@ -51,4 +51,12 @@ public class NoticeDao {
 		mapperSession.close();
 		return vo;
 	}
+	public int setReadCount(int idx) {
+		SqlSession mapperSession = SqlSessionBean.getSession();
+		int result = mapperSession.insert("notice.setReadCount",idx);
+		mapperSession.commit();
+		mapperSession.close();
+		return result;
+		
+	}
 }

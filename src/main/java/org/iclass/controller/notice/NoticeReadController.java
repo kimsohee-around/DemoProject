@@ -25,7 +25,7 @@ public class NoticeReadController implements Controller {
 
 			NoticeDao dao = NoticeDao.getInstance();
 			//조회수 증가 : 실행 위치는?
-			//dao.setReadCount(idx);
+			dao.setReadCount(idx);
 			
 			Notice vo = dao.read(idx);
 			if(vo==null) throw new RuntimeException();   //잘못된 파라미터로 vo가 null 일때 런타임예외 발생시키기
