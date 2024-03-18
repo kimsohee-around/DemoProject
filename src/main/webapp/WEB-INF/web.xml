@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>DemoProject</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>iclass10_Board</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <!-- 확장자 없는 url 설계시. 리소스는 직접 리소스 파일로 처리되도록 합니다. -->
   <servlet-mapping>
         <servlet-name>default</servlet-name>
@@ -22,4 +21,35 @@
         <url-pattern>*.ttf</url-pattern>
         <url-pattern>*.woff</url-pattern>
     </servlet-mapping>
+    
+    <!-- Filter 2개 적용 -->
+    <!-- 필터 등록 -->
+    <filter>
+    	<filter-name>SessionFilter</filter-name>  <!-- name은 식별값  -->
+    	<filter-class>org.iclass.filter.SessionFilter</filter-class>  <!-- 필터의 패키지명.클래스명 -->
+    </filter>
+    <filter>
+		<filter-name>SetEncodingFilter</filter-name> 
+		<filter-class>org.iclass.filter.SetEncodingFilter</filter-class>
+	</filter>
+	<!-- 필터 매핑 -->
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/*</url-pattern>  <!-- 모든 url에 적용 -->
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SetEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 실행 중에 발생하는 (런타임)  Exception 처리할 url -->
+	<error-page>
+    	<exception-type>java.lang.Exception</exception-type>
+    	<location>/invalid.html</location>
+    </error-page> 
+	    
+    <!-- 404 오류가 발생할 때 처리할 url -->
+    <error-page>
+    	<error-code>404</error-code>
+    	<location>/invalid.html</location>
+    </error-page>   <!-- 오류관련 설정은 모든 디버깅이 끝난 후에 하겠습니다. -->
 </web-app>
