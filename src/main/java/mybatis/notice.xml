@@ -44,7 +44,21 @@
 		 		#{attachFile,jdbcType=VARCHAR},
 		 		#{uploadFile,jdbcType=VARCHAR})
  	</insert>
-
+ 	
+ 	<!-- 글 읽기 -->
+	<select id="getOne" parameterType="int" resultType="org.iclass.vo.Notice">
+ 		SELECT * 
+		FROM notice
+		WHERE idx = #{idx} 
+ 	</select>
+ 	<!-- 조회수 증가 -->
+ 	<update id="setReadCount" parameterType="int">
+ 		UPDATE notice 
+		SET 
+			READCOUNT = READCOUNT +1 
+		WHERE 
+			idx = #{idx}
+	</update>		
  </mapper>
  
  
